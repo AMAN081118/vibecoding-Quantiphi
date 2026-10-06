@@ -1,2 +1,7 @@
 .venv
 *cache
+*.pdf
+.env
+taskboard.db
+.env
+PS.md
