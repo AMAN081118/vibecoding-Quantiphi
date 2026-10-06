@@ -6,7 +6,7 @@ A responsive Kanban task-management MVP built with FastAPI, PostgreSQL (Neon), a
 
 1. Create and activate a virtual environment.
 2. Install dependencies: `pip install -r requirements.txt`
-3. Copy `.env.example` to `.env` and replace its value with the Neon connection string.
+3. Create `.env` and add the Neon connection string.
 4. Run: `uvicorn main:app --reload`
 5. Visit `http://127.0.0.1:8000`.
 
@@ -26,13 +26,13 @@ If `DATABASE_URL` is not configured, the app uses a local SQLite database only a
 
 `Project` has many `Task` records. `User` records join projects through `Membership`, which stores the role. A task may be assigned only to a member of its project.
 
-| Endpoint | Purpose |
-| --- | --- |
-| `GET /api/projects` | List available projects |
-| `GET /api/projects/{id}/board` | Board data, members, workloads |
-| `POST /api/projects/{id}/tasks` | Create a task |
-| `PATCH /api/tasks/{id}` | Update task fields/status |
-| `DELETE /api/tasks/{id}` | Delete a task |
+| Endpoint                          | Purpose                                |
+| --------------------------------- | -------------------------------------- |
+| `GET /api/projects`               | List available projects                |
+| `GET /api/projects/{id}/board`    | Board data, members, workloads         |
+| `POST /api/projects/{id}/tasks`   | Create a task                          |
+| `PATCH /api/tasks/{id}`           | Update task fields/status              |
+| `DELETE /api/tasks/{id}`          | Delete a task                          |
 | `POST /api/projects/{id}/members` | Create/reuse a user and add membership |
 
 Interactive API documentation is at `/docs`.
